@@ -1,5 +1,10 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const ProjectGrid = ({
   items,
@@ -181,17 +186,21 @@ const ProjectGrid = ({
 
             {c.tech && (
               <div className="flex justify-start gap-2 mt-2 pt-2 border-t border-white/10">
-                {c.tech.map((IconComponent, idx) => (
-                  <div
-                    key={idx}
-                    className="p-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center"
-                  >
-                    <IconComponent
-                      size={16}
-                      stroke={1.5}
-                      className="text-white/80"
-                    />
-                  </div>
+                {c.tech.map((item, idx) => (
+                  <Tooltip key={idx}>
+                    <TooltipTrigger asChild>
+                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                        <item.icon
+                          size={16}
+                          stroke={1.5}
+                          className="text-white/80"
+                        />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom">
+                      <p>{item.tooltip}</p>
+                    </TooltipContent>
+                  </Tooltip>
                 ))}
               </div>
             )}

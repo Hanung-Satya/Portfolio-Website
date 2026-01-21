@@ -1,34 +1,35 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import emailjs from '@emailjs/browser';
-import { toast } from "sonner"
+import { toast } from "sonner";
+import { IconLoader2 } from "@tabler/icons-react";
 
 export default function EmailForm() {
   const formValue = useRef<HTMLFormElement>(null)
+  const [ isLoading, setIsLoading ] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  async function handleSubmit(e : React.FormEvent) {
     e.preventDefault();
 
     if (!formValue.current) return;
+    try {
+      setIsLoading(true)
+      await emailjs.sendForm("service_spye0xf", "template_ld3vc4b", formValue.current, "ywQDNAwbJser9A0SQ")
 
-    emailjs
-    .sendForm("service_spye0xf", "template_ld3vc4b", formValue.current, "ywQDNAwbJser9A0SQ")
-    .then(
-      () => {
-        toast.success("Message sent successfully!");
-        formValue.current?.reset();
-      },
-      (error) => {
-        toast.error("Failed to send message. Please try again later. Message: " + error.text);
-      }
-    )
-  };
+      formValue.current.reset()
+    } catch (error) {
+      toast.error("Gagal Mengirim Email : " + error)
+    } finally {
+      toast.success("Pesan berhasil mengirim pesan")
+      setIsLoading(false)
+    }
+  }
 
   return (
-    <div className="shadow-input mx-auto w-full rounded-xl bg-white p-6 md:p-10 dark:bg-black">
+    <div className="shadow-input mx-auto w-full rounded-xl bg-white p-6 md:p-10 dark:bg-black font-poppins">
       <form ref={formValue} className=" space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <LabelInputContainer>
@@ -61,10 +62,10 @@ export default function EmailForm() {
         </LabelInputContainer>
 
         <button
-          className="group/btn relative block h-11 w-full rounded-md bg-gradient-to-br from-black to-neutral-700 font-medium text-white dark:from-zinc-900 dark:to-zinc-800 pointer-events-auto"
+          className="group/btn relative flex h-11 w-full justify-center items-center rounded-md bg-gradient-to-br from-black to-neutral-700 font-medium text-white dark:from-zinc-900 dark:to-zinc-800 pointer-events-auto"
           type="submit"
         >
-          Send Message
+          {isLoading ? <IconLoader2/> : "Send Message"}
           <BottomGradient />
         </button>
       </form>
