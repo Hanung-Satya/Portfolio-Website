@@ -43,7 +43,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        © 2024 Hanung Satya. All rights reserved.
+        © 2026 Hanung Satya. All rights reserved.
       </div>
     </footer>
   );

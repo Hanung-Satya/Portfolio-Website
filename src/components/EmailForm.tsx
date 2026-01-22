@@ -23,7 +23,7 @@ export default function EmailForm() {
     } catch (error) {
       toast.error("Gagal Mengirim Email : " + error)
     } finally {
-      toast.success("Pesan berhasil mengirim pesan")
+      toast.success("Berhasil mengirim pesan")
       setIsLoading(false)
     }
   }

@@ -26,7 +26,7 @@ export default function AboutSection() {
             <h1 className="font-inter-black text-4xl">About Me</h1>
             <BlurText
               text={aboutMeText}
-              delay={100}
+              delay={50}
               animateBy="words"
               direction="top"
               className="mt-3 text-base text-start leading-relaxed text-gray-300"
