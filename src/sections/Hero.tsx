@@ -15,7 +15,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden ">
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden ">
       <Galaxy className="absolute inset-0 z-0" />
       <div className="relative z-10 flex flex-col h-full items-center justify-center pointer-events-none">
         <ShinyText

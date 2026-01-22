@@ -29,9 +29,9 @@ export default function EmailForm() {
   }
 
   return (
-    <div className="shadow-input mx-auto w-full rounded-xl bg-white p-6 md:p-10 dark:bg-black font-poppins">
-      <form ref={formValue} className=" space-y-6" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div className="shadow-input mx-auto w-full rounded-xl bg-white p-6 sm:p-8 md:p-10 dark:bg-black font-poppins">
+      <form ref={formValue} className="space-y-5 md:space-y-6" onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <LabelInputContainer>
             <Label htmlFor="fullname">Full Name</Label>
             <Input id="fullname" name="user_name" placeholder="Tyler Durden" type="text" required />
@@ -57,7 +57,7 @@ export default function EmailForm() {
             rows={6}
             required
             placeholder="Write your message here..."
-            className="w-full rounded-md border border-neutral-300 bg-transparent p-3 text-sm shadow-sm outline-none transition focus:border-black dark:border-neutral-700 dark:focus:border-white"
+            className="w-full resize-none rounded-md border border-neutral-300 bg-transparent p-3 text-sm shadow-sm outline-none transition focus:border-black dark:border-neutral-700 dark:focus:border-white"
           />
         </LabelInputContainer>
 
@@ -65,7 +65,7 @@ export default function EmailForm() {
           className="group/btn relative flex h-11 w-full justify-center items-center rounded-md bg-gradient-to-br from-black to-neutral-700 font-medium text-white dark:from-zinc-900 dark:to-zinc-800 pointer-events-auto"
           type="submit"
         >
-          {isLoading ? <IconLoader2/> : "Send Message"}
+          {isLoading ? <IconLoader2 className="animate-spin"/> : "Send Message"}
           <BottomGradient />
         </button>
       </form>

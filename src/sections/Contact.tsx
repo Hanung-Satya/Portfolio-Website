@@ -4,9 +4,9 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="w-full h-screen flex items-center justify-center"
+      className="w-full py-16 md:py-24"
     >
-      <div className="w-full max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <h1 className="font-inter-black text-4xl mb-2 text-center">
           Get in Touch
         </h1>

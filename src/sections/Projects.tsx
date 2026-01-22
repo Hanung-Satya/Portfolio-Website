@@ -81,11 +81,11 @@ export default function ProjectsSection() {
 ];
 
   return (
-    <section id="project" className="w-full h-screen items-center flex justify-center px-6">
-      <div className="mx-auto max-w-8xl">
+    <section id="project" className="w-full py-16 md:py-24">
+      <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 lg:px-8">
         <h1 className="font-inter-black text-4xl mb-2 text-center">Projects</h1>
 
-        <div className="grid grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 gap-4 mt-8">
           <div className="col-span-3">
             <ProjectGrid
               items={projects}

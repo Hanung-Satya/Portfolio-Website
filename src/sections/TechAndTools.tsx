@@ -73,14 +73,14 @@ export default function TechSection() {
   ];
 
   return (
-    <section className="w-full h-fit flex justify-center ">
-      <div className="mx-auto max-w-8xl">
+    <section className="w-full py-16 md:py-24">
+      <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 lg:px-8">
         <h1 className="font-inter-black text-4xl mb-2 text-center">
           Technical Skills & Certifications
         </h1>
 
-        <Tabs defaultValue="tech" className="w-full">
-          <TabsList className="mx-auto flex w-fit gap-12 bg-transparent border-b border-white/10">
+        <Tabs defaultValue="tech" className="w-full items-center">
+          <TabsList className="mx-auto flex w-fit gap-6 sm:gap-12 bg-transparent border-b border-white/10">
             <TabsTrigger
               value="tech"
               className="relative bg-transparent px-0 pb-3 text-sm tracking-widest text-white/40 data-[state=active]:text-white data-[state=active]:after:absolute data-[state=active]:after:left-0 data-[state=active]:after:-bottom-[1px] data-[state=active]:after:h-[2px] data-[state=active]:after:w-full data-[state=active]:after:bg-white"
@@ -96,8 +96,8 @@ export default function TechSection() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="tech" className="mt-2">
-            <div className="grid grid-cols-4 gap-4">
+          <TabsContent value="tech" className="mt-2 max-w-7xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {techStack.map((tech) => (
                 <SpotlightCard
                   className="flex items-center justify-center gap-2"
@@ -121,7 +121,7 @@ export default function TechSection() {
           </TabsContent>
 
           <TabsContent value="cert" className="mt-2">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               <div className="col-span-3">
                 <ChromaGrid
                   items={certificate}

@@ -14,11 +14,15 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full min-h-screen items-center flex justify-center"
+      className="w-full px-4 sm:px-6 md:px-8 py-16 md:py-24"
     >
-      <div className="relative mx-auto w-full max-w-6xl rounded-3xl border-2 border-white/20 bg-gradient-to-br from-black via-zinc-950 to-zinc-900 p-8 shadow-[0_0_70px_rgba(255,255,255,0.35)] before:absolute before:-inset-[1px] before:rounded-3xl before:bg-gradient-to-br before:from-white/40 before:via-transparent before:to-white/10 before:blur-xl before:opacity-40 before:pointer-events-none">
-        <div className=" grid grid-cols-10 gap-6">
-          <div className="col-span-8 md:col-span-6 sm:col-span-5 ">
+      <div className="relative mx-auto w-full max-w-6xl p-6 sm:p-8 md:p-10 rounded-3xl border-2 border-white/20 bg-gradient-to-br from-black via-zinc-950 to-zinc-900 shadow-[0_0_70px_rgba(255,255,255,0.35)] before:absolute before:-inset-[1px] before:rounded-3xl before:bg-gradient-to-br before:from-white/40 before:via-transparent before:to-white/10 before:blur-xl before:opacity-40 before:pointer-events-none">
+        <div className=" grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-10">
+          <div className="col-span-1 md:col-span-4 flex justify-center md:justify-center mt-8 md:mt-0">
+            <ProfileCard />
+          </div>
+          
+          <div className="col-span-1 md:col-span-6">
             <h1 className="font-inter-black text-4xl">About Me</h1>
             <BlurText
               text={aboutMeText}
@@ -28,8 +32,7 @@ export default function AboutSection() {
               className="mt-3 text-base text-start leading-relaxed text-gray-300"
             />
 
-            <p className=""></p>
-            <div className="mt-6 flex justify-between items-start ">
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4  ">
               <div className="card flex flex-col p-2">
                 <div className="flex items-baseline gap-0 font-poppins font-semibold text-2xl leading-none">
                   <CountUp
@@ -135,7 +138,7 @@ export default function AboutSection() {
                 <span className="font-poppins mt-2">Clean Code Focus</span>
               </div>
             </div>
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex items-center gap-4 mt-4 mb-2 ">
               <a
                 href="https://github.com/Hanung-Satya"
                 className="text-white hover:text-blue-500 transition-colors"
@@ -157,9 +160,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="flex col-span-4 md:col-span-4 justify-center">
-            <ProfileCard />
-          </div>
+          
         </div>
       </div>
     </section>
