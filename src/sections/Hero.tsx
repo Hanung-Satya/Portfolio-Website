@@ -40,7 +40,7 @@ export default function HeroSection() {
             className="ml-2"
           />
         </div>
-        <p className=" text-sm text-center text-muted-foreground max-w-md">
+        <p className=" text-xs sm:text-sm md:text-base leading-relaxed text-center text-muted-foreground max-w-xs sm:max-w-sm md:max-w-md">
           Building clean and modern web interfaces. Focused on interactive and
           user-friendly experiences.
         </p>
