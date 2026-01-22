@@ -1,4 +1,6 @@
 
+import { useState } from "react";
+import FullPageLoader from "./components/FullPageLoader";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider";
 import "./index.css";
@@ -12,10 +14,16 @@ import TechSection from "./sections/TechAndTools";
 
 function App() {
   const NavLinks = ["Home", "About", "Project", "Contact"];
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
-      <div className="h-screen w-full">
+
+      {isLoading && (
+        <FullPageLoader onFinish={() => setIsLoading(false)} />
+      )}
+      {!isLoading && (
+        <div className="h-screen w-full">
         <header>
           <Navbar navList={NavLinks} />
         </header>
@@ -34,6 +42,7 @@ function App() {
           <Footer/>
         </main>
       </div>
+      )}
     </ThemeProvider>
   );
 }

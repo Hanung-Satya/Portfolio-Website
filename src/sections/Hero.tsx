@@ -19,13 +19,13 @@ export default function HeroSection() {
       <Galaxy className="absolute inset-0 z-0" />
       <div className="relative z-10 flex flex-col h-full items-center justify-center pointer-events-none">
         <ShinyText
-          className="text-6xl font-inter-black text-center max-w-lg"
+          className="text-2xl md:text-5xl sm:text-4xl font-inter-black text-center max-w-lg"
           text={"Hi, I'm Hanung Satya Adi Wicaksono"}
           speed={2.3}
           pauseOnHover
         ></ShinyText>
 
-        <div className="font-poppins text-2xl m-2 flex items-center ">
+        <div className="font-poppins text-lg md:text-2xl sm:text-xl m-2 flex items-center ">
           <span className="">I'm a</span>
           <TextType
             text={[

@@ -1,6 +1,19 @@
 import { useInView, useMotionValue, useSpring } from 'motion/react';
 import { useCallback, useEffect, useRef } from 'react';
 
+type CountUpProps = {
+  from?: number;
+  to: number;
+  direction?: "up" | "down";
+  delay?: number;
+  duration?: number;
+  className?: string;
+  startWhen?: boolean;
+  separator?: string;
+  onStart?: () => void;
+  onEnd?: () => void;
+};
+
 export default function CountUp({
   to,
   from = 0,
@@ -12,7 +25,7 @@ export default function CountUp({
   separator = '',
   onStart,
   onEnd
-}) {
+} : CountUpProps) {
   const ref = useRef(null);
   const motionValue = useMotionValue(direction === 'down' ? to : from);
 
