@@ -13,10 +13,10 @@ import {
   IconBrandTypescript,
   IconBrandVscode,
 } from "@tabler/icons-react";
-import BasicJS from "@/assets/images/BasicJS.png";
-import UIUX from "@/assets/images/BookilUIUX.png";
-import FE from "@/assets/images/FE.png";
-import BasicWeb from "@/assets/images/BasicWeb.png";
+import BasicJS from "@/assets/images/BasicJS.webp";
+import UIUX from "@/assets/images/BookilUIUX.webp";
+import FE from "@/assets/images/FE.webp";
+import BasicWeb from "@/assets/images/BasicWeb.webp";
 import ChromaGrid from "@/components/ChromaGrid";
 
 export default function TechSection() {
